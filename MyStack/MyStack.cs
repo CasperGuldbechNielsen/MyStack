@@ -16,12 +16,9 @@
             {
                 throw new MyStackIsEmptyException("The stack is empty!");
             }
-
-            _top--;
-
-            var myPoppedItem = _stack[_top];
             
-            return myPoppedItem;
+            // decrement 1 from top and return _stack[_top]
+            return _stack[--_top];
         }
 
         public void Push(int element)
@@ -31,10 +28,9 @@
                 throw new MyStackIsFullException("The stack is full!");
             }
 
-            _stack[_top] = element;
 
-            _top++;
-            
+            // Add element to the array and then increment _top
+            _stack[_top++] = element;            
         }
     }
 }
