@@ -56,7 +56,7 @@ namespace MyStack
 
             try
             {
-                Circle c = myCircleStack.Pop();
+                var c = myCircleStack.Pop();
                 Console.WriteLine(c);
                 Console.WriteLine(myCircleStack.Pop());
                 Console.WriteLine(myCircleStack.Pop());
