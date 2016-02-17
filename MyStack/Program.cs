@@ -10,16 +10,16 @@ namespace MyStack
     {
         static void Main(string[] args)
         {
-            MyStack MyStack = new MyStack(5);
+            MyStack<int> myIntStack = new MyStack<int>(5);
 
             try
             {
-                MyStack.Push(1);
-                MyStack.Push(2);
-                MyStack.Push(3);
-                MyStack.Push(4);
-                MyStack.Push(5);
-                MyStack.Push(6);
+                myIntStack.Push(1);
+                myIntStack.Push(2);
+                myIntStack.Push(3);
+                myIntStack.Push(4);
+                myIntStack.Push(5);
+                myIntStack.Push(6);
             }
             catch (MyStackIsFullException e)
             {
@@ -28,12 +28,38 @@ namespace MyStack
 
             try
             {
-                Console.WriteLine(MyStack.Pop());
-                Console.WriteLine(MyStack.Pop());
-                Console.WriteLine(MyStack.Pop());
-                Console.WriteLine(MyStack.Pop());
-                Console.WriteLine(MyStack.Pop());
-                Console.WriteLine(MyStack.Pop());
+                Console.WriteLine(myIntStack.Pop());
+                Console.WriteLine(myIntStack.Pop());
+                Console.WriteLine(myIntStack.Pop());
+                Console.WriteLine(myIntStack.Pop());
+                Console.WriteLine(myIntStack.Pop());
+                Console.WriteLine(myIntStack.Pop());
+            }
+            catch (MyStackIsEmptyException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            MyStack<Circle> myCircleStack = new MyStack<Circle>(5);
+
+
+            try
+            {
+                myCircleStack.Push(new Circle(5));
+                myCircleStack.Push(new Circle(3));
+                myCircleStack.Push(new Circle(2));
+            }
+            catch (MyStackIsFullException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            try
+            {
+                Circle c = myCircleStack.Pop();
+                Console.WriteLine(c);
+                Console.WriteLine(myCircleStack.Pop());
+                Console.WriteLine(myCircleStack.Pop());
             }
             catch (MyStackIsEmptyException e)
             {

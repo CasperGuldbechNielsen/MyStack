@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
     <Compile Include="MyStack.cs" />
     <Compile Include="MyStackIsEmptyException.cs" />
     <Compile Include="MyStackIsFullException.cs" />

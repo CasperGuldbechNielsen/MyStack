@@ -1,16 +1,16 @@
 ﻿namespace MyStack
 {
-    public class MyStack
+    public class MyStack<T>
     {
         private int _top = 0;
-        private int[] _stack;
+        private T[] _stack;
 
         public MyStack(int size)
         {
-            _stack = new int[size];
+            _stack = new T[size];
         }
 
-        public int Pop()
+        public T Pop()
         {
             if (_top <= 0)
             {
@@ -21,7 +21,7 @@
             return _stack[--_top];
         }
 
-        public void Push(int element)
+        public void Push(T element)
         {
             if (_top >= _stack.Length)
             {
